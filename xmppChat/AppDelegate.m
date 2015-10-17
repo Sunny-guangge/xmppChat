@@ -10,16 +10,27 @@
 #import "CKLoginUser.h"
 #import "NSString+Helper.h"
 #import "XMPPReconnect.h"
+#import "XMPPvCardCoreDataStorage.h"
+#import "XMPPCapabilities.h"
+#import "XMPPCapabilitiesCoreDataStorage.h"
 
-#define CKHostName @"192.168.1.112"
+#define CKHostName @"192.168.1.105"
 
-@interface AppDelegate ()<XMPPStreamDelegate>
+@interface AppDelegate ()<XMPPStreamDelegate,UIAlertViewDelegate>
 {
     Completion _completion;
     FailBlock _failBlock;
     
     // XMPP重新连接XMPPStream
     XMPPReconnect   *_xmppReconnect;
+    
+    XMPPvCardCoreDataStorage    *_xmppvCardStorage;     // 电子名片的数据存储模块
+    
+    XMPPCapabilities            *_xmppCapabilities;     // 实体扩展模块
+    XMPPCapabilitiesCoreDataStorage *_xmppCapabilitiesCoreDataStorage; // 数据存储模块
+    
+    //申请加好友的人的信息
+    XMPPJID *jid;
 }
 
 //设置xmppstream
@@ -135,6 +146,13 @@
     }
 #endif
     
+    //扩展模块
+    //2.1重新连接模块
+    _xmppReconnect = [[XMPPReconnect alloc] init];
+    //2.2电子名片模块
+    _xmppvCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    _xmppvCardModule = [[XMPPvCardTempModule alloc] initWithvCardStorage:_xmppvCardStorage];
+    _xmppvCardAvatarModule = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_xmppvCardModule];
     // 2.4 花名册模块
     _xmppRosterStorage = [[XMPPRosterCoreDataStorage alloc] init];
     _xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:_xmppRosterStorage];
@@ -143,50 +161,104 @@
     // 自动从服务器更新好友记录，例如：好友自己更改了名片
     [_xmppRoster setAutoFetchRoster:YES];
     
-    // 2. 添加代理
+    // 2.5 实体扩展模块
+    _xmppCapabilitiesCoreDataStorage = [[XMPPCapabilitiesCoreDataStorage alloc] init];
+    _xmppCapabilities = [[XMPPCapabilities alloc] initWithCapabilitiesStorage:_xmppCapabilitiesCoreDataStorage];
+    
+    // 2.6 消息归档模块
+    _xmppMessageArchivingCoreDataStorage = [[XMPPMessageArchivingCoreDataStorage alloc] init];
+    _xmppMessageArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_xmppMessageArchivingCoreDataStorage];
+    
+    
+    // 3 将重新连接模块添加到XMPPStream
+    [_xmppReconnect activate:_xmppStream];
+    [_xmppvCardModule activate:_xmppStream];
+    [_xmppvCardAvatarModule activate:_xmppStream];
+    [_xmppRoster activate:_xmppStream];
+    [_xmppCapabilities activate:_xmppStream];
+    [_xmppMessageArchiving activate:_xmppStream];
+    
+    
+    // 4. 添加代理
     // 由于所有网络请求都是做基于网络的数据处理，这些数据处理工作与界面UI无关。
     // 因此可以让代理方法在其他线城中运行，从而提高程序的运行性能，避免出现应用程序阻塞的情况
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
-     [_xmppRoster addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
-    
-    // 3. 扩展模块
-    // 3.1 重新连接模块
-    _xmppReconnect = [[XMPPReconnect alloc] init];
-    
-    // 3.2 将重新连接模块添加到XMPPStream
-    [_xmppReconnect activate:_xmppStream];
-    [_xmppRoster activate:_xmppStream];
-    
+    [_xmppRoster addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
 
 // 销毁XMPPStream并注销已注册的扩展模块
 - (void)teardownStream
 {
-    // 1. 断开XMPPStream的连接
-    [_xmppStream disconnect];
+    // 1. 删除代理
+    [_xmppStream removeDelegate:self];
+    [_xmppRoster removeDelegate:self];
     
     // 2. 取消激活在setupStream方法中激活的扩展模块
     [_xmppReconnect deactivate];
+    [_xmppvCardModule deactivate];
+    [_xmppvCardAvatarModule deactivate];
+    [_xmppRoster deactivate];
+    [_xmppCapabilities deactivate];
+    [_xmppMessageArchiving deactivate];
     
-    // 3. 内存清理
+    // 3. 断开XMPPStream的连接
+    [_xmppStream disconnect];
+    
+    // 4. 内存清理
     _xmppStream = nil;
     _xmppReconnect = nil;
+    _xmppvCardModule = nil;
+    _xmppvCardAvatarModule = nil;
+    _xmppvCardStorage = nil;
+    _xmppRoster = nil;
+    _xmppRosterStorage = nil;
+    _xmppCapabilities = nil;
+    _xmppCapabilitiesCoreDataStorage = nil;
+    _xmppMessageArchiving = nil;
+    _xmppMessageArchivingCoreDataStorage = nil;
 }
 
 - (void)dealloc
 {
     // 释放XMPP相关对象及扩展模块
     [self teardownStream];
-    
-    // 2. 取消激活在setupStream方法中激活的扩展模块
-    [_xmppReconnect deactivate];
-    
-    // 3. 内存清理
-    _xmppStream = nil;
-    _xmppReconnect = nil;
 }
 
+/*收到有人添加好友的消息
+- (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence
+{
+    //取得好友状态
+    NSString *presenceType = [NSString stringWithFormat:@"%@", [presence type]]; //online/offline
+    //请求的用户
+    NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
+    NSLog(@"presenceType:%@",presenceType);
+    
+    NSLog(@"presence2:%@  sender2:%@",presence,sender);
+    
+    jid = [XMPPJID jidWithString:presenceFromUser];
+    
+    NSString *message = [NSString stringWithFormat:@"%@请求加您为好友！",presenceFromUser];
+    
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+    alertview.delegate = self;
+    [alertview show];
+    
+//    [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0)
+    {
+        [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:NO];
+    }else
+    {
+        [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
+    }
+    
+    
+}
+*/
 #pragma mark 通知服务器上线
 - (void)goOnline
 {

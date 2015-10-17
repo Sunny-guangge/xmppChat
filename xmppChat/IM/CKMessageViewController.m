@@ -26,7 +26,7 @@
 - (UITableView *)messageTableView
 {
     if (!_messageTableView) {
-        _messageTableView = [[UITableView alloc] initWithFrame:self.view.frame];
+        _messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 49)];
         _messageTableView.delegate = self;
         _messageTableView.dataSource = self;
     }
