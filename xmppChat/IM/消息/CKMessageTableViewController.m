@@ -2,13 +2,14 @@
 //  CKMessageTableViewController.m
 //  xmppChat
 //
-//  Created by user on 15/11/11.
+//  Created by user on 15/11/20.
 //  Copyright © 2015年 user. All rights reserved.
 //
 
 #import "CKMessageTableViewController.h"
+#import "Header.h"
 
-@interface CKMessageTableViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface CKMessageTableViewController ()
 
 @end
 
@@ -23,7 +24,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"111"];
+    self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    
+    self.tableView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.tableFooterView = footView;
+    
+    NSLog(@"%f",self.view.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,26 +41,23 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
     return 20;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"111" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"111"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     }
     
-    cell.backgroundColor = [UIColor redColor];
-    
     cell.textLabel.text = @(indexPath.row).description;
+    
     
     return cell;
 }

@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "XMPPvCardTemp.h"
 #import "CKLoginUser.h"
+#import "Header.h"
 //#import "CKEditViewController.h"
 
 @interface CKPersonalViewController ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
@@ -59,8 +60,6 @@
     
     zhiArray = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
     
-    
-    self.automaticallyAdjustsScrollViewInsets = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     //获取用户个人信息
 //    [self getUserMessage];
@@ -68,6 +67,8 @@
     UIBarButtonItem *editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(didClickEditButton)];
     
     self.navigationItem.leftBarButtonItem = editBarButtonItem;
+    
+    self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
 }
 

@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  xmppChat
 //
-//  Created by user on 15/10/14.
+//  Created by user /Users/user/Desktop/企信通/企信通on 15/10/14.
 //  Copyright (c) 2015年 user. All rights reserved.
 //
 

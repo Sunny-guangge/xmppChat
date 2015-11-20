@@ -11,11 +11,13 @@
 		CE2AC59B1BFD82130032CB47 /* CKContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AC5991BFD82130032CB47 /* CKContactViewController.m */; };
 		CE38C0F81BFED7AB0058C6B2 /* CKPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0EC1BFED7AB0058C6B2 /* CKPersonalViewController.m */; };
 		CE38C0F91BFED7AB0058C6B2 /* CKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0EF1BFED7AB0058C6B2 /* CKChatViewController.m */; };
-		CE38C0FA1BFED7AB0058C6B2 /* CKMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0F11BFED7AB0058C6B2 /* CKMessageTableViewController.m */; };
-		CE38C0FB1BFED7AB0058C6B2 /* CKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0F31BFED7AB0058C6B2 /* CKMessageViewController.m */; };
 		CE38C0FC1BFED7AB0058C6B2 /* CKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0F61BFED7AB0058C6B2 /* CKViewController.m */; };
 		CE38C0FD1BFED7AB0058C6B2 /* IM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38C0F71BFED7AB0058C6B2 /* IM.storyboard */; };
 		CE38C1001BFED7DD0058C6B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0FF1BFED7DD0058C6B2 /* ViewController.m */; };
+		CE38C1031BFEDC180058C6B2 /* CKMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C1021BFEDC180058C6B2 /* CKMessageTableViewController.m */; };
+		CE38C1081BFEDE5C0058C6B2 /* CKMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C1061BFEDE5C0058C6B2 /* CKMessageTableViewCell.m */; };
+		CE38C1091BFEDE5C0058C6B2 /* CKMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38C1071BFEDE5C0058C6B2 /* CKMessageTableViewCell.xib */; };
+		CE38C10C1BFF13630058C6B2 /* CKChatNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C10B1BFF13630058C6B2 /* CKChatNavigationViewController.m */; };
 		CE5080451BCE668F00074DA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5080441BCE668F00074DA9 /* main.m */; };
 		CE5080481BCE668F00074DA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5080471BCE668F00074DA9 /* AppDelegate.m */; };
 		CE50804E1BCE668F00074DA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE50804C1BCE668F00074DA9 /* Main.storyboard */; };
@@ -50,15 +52,19 @@
 		CE38C0EC1BFED7AB0058C6B2 /* CKPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKPersonalViewController.m; sourceTree = "<group>"; };
 		CE38C0EE1BFED7AB0058C6B2 /* CKChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKChatViewController.h; sourceTree = "<group>"; };
 		CE38C0EF1BFED7AB0058C6B2 /* CKChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKChatViewController.m; sourceTree = "<group>"; };
-		CE38C0F01BFED7AB0058C6B2 /* CKMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageTableViewController.h; sourceTree = "<group>"; };
-		CE38C0F11BFED7AB0058C6B2 /* CKMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageTableViewController.m; sourceTree = "<group>"; };
-		CE38C0F21BFED7AB0058C6B2 /* CKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageViewController.h; sourceTree = "<group>"; };
-		CE38C0F31BFED7AB0058C6B2 /* CKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageViewController.m; sourceTree = "<group>"; };
 		CE38C0F51BFED7AB0058C6B2 /* CKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKViewController.h; sourceTree = "<group>"; };
 		CE38C0F61BFED7AB0058C6B2 /* CKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKViewController.m; sourceTree = "<group>"; };
 		CE38C0F71BFED7AB0058C6B2 /* IM.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IM.storyboard; sourceTree = "<group>"; };
 		CE38C0FE1BFED7DD0058C6B2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CE38C0FF1BFED7DD0058C6B2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE38C1011BFEDC180058C6B2 /* CKMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageTableViewController.h; sourceTree = "<group>"; };
+		CE38C1021BFEDC180058C6B2 /* CKMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageTableViewController.m; sourceTree = "<group>"; };
+		CE38C1051BFEDE5C0058C6B2 /* CKMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageTableViewCell.h; sourceTree = "<group>"; };
+		CE38C1061BFEDE5C0058C6B2 /* CKMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageTableViewCell.m; sourceTree = "<group>"; };
+		CE38C1071BFEDE5C0058C6B2 /* CKMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKMessageTableViewCell.xib; sourceTree = "<group>"; };
+		CE38C10A1BFF13630058C6B2 /* CKChatNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKChatNavigationViewController.h; sourceTree = "<group>"; };
+		CE38C10B1BFF13630058C6B2 /* CKChatNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKChatNavigationViewController.m; sourceTree = "<group>"; };
+		CE38C10D1BFF17570058C6B2 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		CE50803F1BCE668F00074DA9 /* xmppChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmppChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5080431BCE668F00074DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5080441BCE668F00074DA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,12 +133,11 @@
 		CE38C0ED1BFED7AB0058C6B2 /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				CE38C1041BFEDE420058C6B2 /* view */,
 				CE38C0EE1BFED7AB0058C6B2 /* CKChatViewController.h */,
 				CE38C0EF1BFED7AB0058C6B2 /* CKChatViewController.m */,
-				CE38C0F01BFED7AB0058C6B2 /* CKMessageTableViewController.h */,
-				CE38C0F11BFED7AB0058C6B2 /* CKMessageTableViewController.m */,
-				CE38C0F21BFED7AB0058C6B2 /* CKMessageViewController.h */,
-				CE38C0F31BFED7AB0058C6B2 /* CKMessageViewController.m */,
+				CE38C1011BFEDC180058C6B2 /* CKMessageTableViewController.h */,
+				CE38C1021BFEDC180058C6B2 /* CKMessageTableViewController.m */,
 			);
 			path = "消息";
 			sourceTree = "<group>";
@@ -143,8 +148,20 @@
 				CE38C0F51BFED7AB0058C6B2 /* CKViewController.h */,
 				CE38C0F61BFED7AB0058C6B2 /* CKViewController.m */,
 				CE38C0F71BFED7AB0058C6B2 /* IM.storyboard */,
+				CE38C10A1BFF13630058C6B2 /* CKChatNavigationViewController.h */,
+				CE38C10B1BFF13630058C6B2 /* CKChatNavigationViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CE38C1041BFEDE420058C6B2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				CE38C1051BFEDE5C0058C6B2 /* CKMessageTableViewCell.h */,
+				CE38C1061BFEDE5C0058C6B2 /* CKMessageTableViewCell.m */,
+				CE38C1071BFEDE5C0058C6B2 /* CKMessageTableViewCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		CE4DD57B1BD4D36D00361C78 /* 我的好友 */ = {
@@ -247,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFBFC081BCF93330062961D /* Singleton.h */,
+				CE38C10D1BFF17570058C6B2 /* Header.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -308,7 +326,7 @@
 		CE5080371BCE668F00074DA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = user;
 				TargetAttributes = {
 					CE50803E1BCE668F00074DA9 = {
@@ -345,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE38C1091BFEDE5C0058C6B2 /* CKMessageTableViewCell.xib in Resources */,
 				CE50804E1BCE668F00074DA9 /* Main.storyboard in Resources */,
 				CE5080531BCE668F00074DA9 /* LaunchScreen.xib in Resources */,
 				CE38C0FD1BFED7AB0058C6B2 /* IM.storyboard in Resources */,
@@ -402,15 +421,16 @@
 				CEFBFC091BCF93330062961D /* NSArray+Log.m in Sources */,
 				CE2AC59B1BFD82130032CB47 /* CKContactViewController.m in Sources */,
 				CE38C0F91BFED7AB0058C6B2 /* CKChatViewController.m in Sources */,
+				CE38C1031BFEDC180058C6B2 /* CKMessageTableViewController.m in Sources */,
+				CE38C10C1BFF13630058C6B2 /* CKChatNavigationViewController.m in Sources */,
 				CE5080481BCE668F00074DA9 /* AppDelegate.m in Sources */,
 				CE2AC59A1BFD82130032CB47 /* CKAddViewController.m in Sources */,
-				CE38C0FB1BFED7AB0058C6B2 /* CKMessageViewController.m in Sources */,
 				CE38C1001BFED7DD0058C6B2 /* ViewController.m in Sources */,
 				CEFBFC011BCF91F40062961D /* CKLoginUser.m in Sources */,
 				CE5080451BCE668F00074DA9 /* main.m in Sources */,
 				CE38C0F81BFED7AB0058C6B2 /* CKPersonalViewController.m in Sources */,
 				CEFBFC0A1BCF93330062961D /* NSString+Helper.m in Sources */,
-				CE38C0FA1BFED7AB0058C6B2 /* CKMessageTableViewController.m in Sources */,
+				CE38C1081BFEDE5C0058C6B2 /* CKMessageTableViewCell.m in Sources */,
 				CE38C0FC1BFED7AB0058C6B2 /* CKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +495,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -547,6 +568,7 @@
 				INFOPLIST_FILE = xmppChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chuangke.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -563,6 +585,7 @@
 				INFOPLIST_FILE = xmppChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chuangke.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -582,6 +605,7 @@
 				);
 				INFOPLIST_FILE = xmppChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chuangke.xmppChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xmppChat.app/xmppChat";
 			};
@@ -597,6 +621,7 @@
 				);
 				INFOPLIST_FILE = xmppChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chuangke.xmppChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xmppChat.app/xmppChat";
 			};

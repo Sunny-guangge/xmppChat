@@ -9,6 +9,7 @@
 #import "CKContactViewController.h"
 #import "CKAddViewController.h"
 #import "AppDelegate.h"
+#import "Header.h"
 
 @interface CKContactViewController ()<UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate>
 {
@@ -32,6 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didClickAddMycompany)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
