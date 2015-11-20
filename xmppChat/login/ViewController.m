@@ -11,6 +11,7 @@
 #import "CKLoginUser.h"
 #import "AppDelegate.h"
 
+
 @interface ViewController ()<UITextFieldDelegate>
 
 
@@ -26,6 +27,8 @@
     
     self.nameTextField.delegate = self;
     self.secretTextField.delegate = self;
+    
+//    self.nameTextField.layer;
 }
 
 - (AppDelegate *)appDelegate

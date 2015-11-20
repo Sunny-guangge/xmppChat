@@ -39,6 +39,7 @@
     personalTabbarItem.image = normalImage3;
     personalTabbarItem.selectedImage = selectImage3;
     
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 - (void)didReceiveMemoryWarning {

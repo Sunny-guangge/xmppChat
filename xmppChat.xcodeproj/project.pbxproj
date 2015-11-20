@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2AC59A1BFD82130032CB47 /* CKAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AC5971BFD82130032CB47 /* CKAddViewController.m */; };
+		CE2AC59B1BFD82130032CB47 /* CKContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AC5991BFD82130032CB47 /* CKContactViewController.m */; };
+		CE38C0F81BFED7AB0058C6B2 /* CKPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0EC1BFED7AB0058C6B2 /* CKPersonalViewController.m */; };
+		CE38C0F91BFED7AB0058C6B2 /* CKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0EF1BFED7AB0058C6B2 /* CKChatViewController.m */; };
+		CE38C0FA1BFED7AB0058C6B2 /* CKMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0F11BFED7AB0058C6B2 /* CKMessageTableViewController.m */; };
+		CE38C0FB1BFED7AB0058C6B2 /* CKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0F31BFED7AB0058C6B2 /* CKMessageViewController.m */; };
+		CE38C0FC1BFED7AB0058C6B2 /* CKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0F61BFED7AB0058C6B2 /* CKViewController.m */; };
+		CE38C0FD1BFED7AB0058C6B2 /* IM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38C0F71BFED7AB0058C6B2 /* IM.storyboard */; };
+		CE38C1001BFED7DD0058C6B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C0FF1BFED7DD0058C6B2 /* ViewController.m */; };
 		CE5080451BCE668F00074DA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5080441BCE668F00074DA9 /* main.m */; };
 		CE5080481BCE668F00074DA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5080471BCE668F00074DA9 /* AppDelegate.m */; };
-		CE50804B1BCE668F00074DA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50804A1BCE668F00074DA9 /* ViewController.m */; };
 		CE50804E1BCE668F00074DA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE50804C1BCE668F00074DA9 /* Main.storyboard */; };
 		CE5080501BCE668F00074DA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE50804F1BCE668F00074DA9 /* Images.xcassets */; };
 		CE5080531BCE668F00074DA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5080511BCE668F00074DA9 /* LaunchScreen.xib */; };
@@ -17,21 +25,6 @@
 		CEFBFC011BCF91F40062961D /* CKLoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC001BCF91F40062961D /* CKLoginUser.m */; };
 		CEFBFC091BCF93330062961D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC041BCF93330062961D /* NSArray+Log.m */; };
 		CEFBFC0A1BCF93330062961D /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC061BCF93330062961D /* NSString+Helper.m */; };
-		CEFBFC0D1BCFA5AF0062961D /* IM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC0C1BCFA5AF0062961D /* IM.storyboard */; };
-		CEFBFC101BCFAE6A0062961D /* CKPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC0F1BCFAE6A0062961D /* CKPersonalViewController.m */; };
-		CEFBFC131BD0CCFA0062961D /* CKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC121BD0CCFA0062961D /* CKMessageViewController.m */; };
-		CEFBFC161BD0CD050062961D /* CKContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC151BD0CD050062961D /* CKContactViewController.m */; };
-		CEFBFC191BD0CFE10062961D /* CKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC181BD0CFE10062961D /* CKChatViewController.m */; };
-		CEFBFC1C1BD0D3A90062961D /* CKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC1B1BD0D3A90062961D /* CKViewController.m */; };
-		CEFBFC271BD0D6B60062961D /* tabbar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC211BD0D6B60062961D /* tabbar2@2x.png */; };
-		CEFBFC281BD0D6B60062961D /* tabbar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC221BD0D6B60062961D /* tabbar3@2x.png */; };
-		CEFBFC291BD0D6B60062961D /* Seltabbar1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC231BD0D6B60062961D /* Seltabbar1@2x.png */; };
-		CEFBFC2A1BD0D6B60062961D /* Seltabbar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC241BD0D6B60062961D /* Seltabbar3@2x.png */; };
-		CEFBFC2B1BD0D6B60062961D /* Seltabbar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC251BD0D6B60062961D /* Seltabbar2@2x.png */; };
-		CEFBFC2C1BD0D6B60062961D /* tabbar1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC261BD0D6B60062961D /* tabbar1@2x.png */; };
-		CEFBFC2F1BD0DA700062961D /* rightmessage.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC2D1BD0DA700062961D /* rightmessage.png */; };
-		CEFBFC301BD0DA700062961D /* leftmessage.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFC2E1BD0DA700062961D /* leftmessage.png */; };
-		CEFBFC331BD0F1BD0062961D /* CKAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFC321BD0F1BD0062961D /* CKAddViewController.m */; };
 		EE067521557AF5CCD3E745AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF35BBD36321DC6D9443E88 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,13 +42,28 @@
 		0FF35BBD36321DC6D9443E88 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BB6A68ACE8683A54B85B2F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C8C1BBE58E857E60F752A7DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE2AC5961BFD82130032CB47 /* CKAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAddViewController.h; sourceTree = "<group>"; };
+		CE2AC5971BFD82130032CB47 /* CKAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAddViewController.m; sourceTree = "<group>"; };
+		CE2AC5981BFD82130032CB47 /* CKContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKContactViewController.h; sourceTree = "<group>"; };
+		CE2AC5991BFD82130032CB47 /* CKContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKContactViewController.m; sourceTree = "<group>"; };
+		CE38C0EB1BFED7AB0058C6B2 /* CKPersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKPersonalViewController.h; sourceTree = "<group>"; };
+		CE38C0EC1BFED7AB0058C6B2 /* CKPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKPersonalViewController.m; sourceTree = "<group>"; };
+		CE38C0EE1BFED7AB0058C6B2 /* CKChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKChatViewController.h; sourceTree = "<group>"; };
+		CE38C0EF1BFED7AB0058C6B2 /* CKChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKChatViewController.m; sourceTree = "<group>"; };
+		CE38C0F01BFED7AB0058C6B2 /* CKMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageTableViewController.h; sourceTree = "<group>"; };
+		CE38C0F11BFED7AB0058C6B2 /* CKMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageTableViewController.m; sourceTree = "<group>"; };
+		CE38C0F21BFED7AB0058C6B2 /* CKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageViewController.h; sourceTree = "<group>"; };
+		CE38C0F31BFED7AB0058C6B2 /* CKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageViewController.m; sourceTree = "<group>"; };
+		CE38C0F51BFED7AB0058C6B2 /* CKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKViewController.h; sourceTree = "<group>"; };
+		CE38C0F61BFED7AB0058C6B2 /* CKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKViewController.m; sourceTree = "<group>"; };
+		CE38C0F71BFED7AB0058C6B2 /* IM.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IM.storyboard; sourceTree = "<group>"; };
+		CE38C0FE1BFED7DD0058C6B2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CE38C0FF1BFED7DD0058C6B2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CE50803F1BCE668F00074DA9 /* xmppChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmppChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5080431BCE668F00074DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5080441BCE668F00074DA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE5080461BCE668F00074DA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE5080471BCE668F00074DA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE5080491BCE668F00074DA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		CE50804A1BCE668F00074DA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		CE50804D1BCE668F00074DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE50804F1BCE668F00074DA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE5080521BCE668F00074DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -69,27 +77,6 @@
 		CEFBFC051BCF93330062961D /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
 		CEFBFC061BCF93330062961D /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
 		CEFBFC081BCF93330062961D /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		CEFBFC0C1BCFA5AF0062961D /* IM.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IM.storyboard; sourceTree = "<group>"; };
-		CEFBFC0E1BCFAE6A0062961D /* CKPersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKPersonalViewController.h; sourceTree = "<group>"; };
-		CEFBFC0F1BCFAE6A0062961D /* CKPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKPersonalViewController.m; sourceTree = "<group>"; };
-		CEFBFC111BD0CCFA0062961D /* CKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMessageViewController.h; sourceTree = "<group>"; };
-		CEFBFC121BD0CCFA0062961D /* CKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMessageViewController.m; sourceTree = "<group>"; };
-		CEFBFC141BD0CD050062961D /* CKContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKContactViewController.h; sourceTree = "<group>"; };
-		CEFBFC151BD0CD050062961D /* CKContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKContactViewController.m; sourceTree = "<group>"; };
-		CEFBFC171BD0CFE10062961D /* CKChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKChatViewController.h; sourceTree = "<group>"; };
-		CEFBFC181BD0CFE10062961D /* CKChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKChatViewController.m; sourceTree = "<group>"; };
-		CEFBFC1A1BD0D3A90062961D /* CKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKViewController.h; sourceTree = "<group>"; };
-		CEFBFC1B1BD0D3A90062961D /* CKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKViewController.m; sourceTree = "<group>"; };
-		CEFBFC211BD0D6B60062961D /* tabbar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar2@2x.png"; sourceTree = "<group>"; };
-		CEFBFC221BD0D6B60062961D /* tabbar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar3@2x.png"; sourceTree = "<group>"; };
-		CEFBFC231BD0D6B60062961D /* Seltabbar1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seltabbar1@2x.png"; sourceTree = "<group>"; };
-		CEFBFC241BD0D6B60062961D /* Seltabbar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seltabbar3@2x.png"; sourceTree = "<group>"; };
-		CEFBFC251BD0D6B60062961D /* Seltabbar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seltabbar2@2x.png"; sourceTree = "<group>"; };
-		CEFBFC261BD0D6B60062961D /* tabbar1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar1@2x.png"; sourceTree = "<group>"; };
-		CEFBFC2D1BD0DA700062961D /* rightmessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightmessage.png; sourceTree = "<group>"; };
-		CEFBFC2E1BD0DA700062961D /* leftmessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftmessage.png; sourceTree = "<group>"; };
-		CEFBFC311BD0F1BD0062961D /* CKAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAddViewController.h; sourceTree = "<group>"; };
-		CEFBFC321BD0F1BD0062961D /* CKAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +115,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE38C0EA1BFED7AB0058C6B2 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				CE38C0EB1BFED7AB0058C6B2 /* CKPersonalViewController.h */,
+				CE38C0EC1BFED7AB0058C6B2 /* CKPersonalViewController.m */,
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		CE38C0ED1BFED7AB0058C6B2 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				CE38C0EE1BFED7AB0058C6B2 /* CKChatViewController.h */,
+				CE38C0EF1BFED7AB0058C6B2 /* CKChatViewController.m */,
+				CE38C0F01BFED7AB0058C6B2 /* CKMessageTableViewController.h */,
+				CE38C0F11BFED7AB0058C6B2 /* CKMessageTableViewController.m */,
+				CE38C0F21BFED7AB0058C6B2 /* CKMessageViewController.h */,
+				CE38C0F31BFED7AB0058C6B2 /* CKMessageViewController.m */,
+			);
+			path = "消息";
+			sourceTree = "<group>";
+		};
+		CE38C0F41BFED7AB0058C6B2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE38C0F51BFED7AB0058C6B2 /* CKViewController.h */,
+				CE38C0F61BFED7AB0058C6B2 /* CKViewController.m */,
+				CE38C0F71BFED7AB0058C6B2 /* IM.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CE4DD57B1BD4D36D00361C78 /* 我的好友 */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AC5961BFD82130032CB47 /* CKAddViewController.h */,
+				CE2AC5971BFD82130032CB47 /* CKAddViewController.m */,
+				CE2AC5981BFD82130032CB47 /* CKContactViewController.h */,
+				CE2AC5991BFD82130032CB47 /* CKContactViewController.m */,
+			);
+			path = "我的好友";
+			sourceTree = "<group>";
+		};
 		CE5080361BCE668F00074DA9 = {
 			isa = PBXGroup;
 			children = (
@@ -151,14 +181,6 @@
 		CE5080411BCE668F00074DA9 /* xmppChat */ = {
 			isa = PBXGroup;
 			children = (
-				CEFBFC2D1BD0DA700062961D /* rightmessage.png */,
-				CEFBFC2E1BD0DA700062961D /* leftmessage.png */,
-				CEFBFC211BD0D6B60062961D /* tabbar2@2x.png */,
-				CEFBFC221BD0D6B60062961D /* tabbar3@2x.png */,
-				CEFBFC231BD0D6B60062961D /* Seltabbar1@2x.png */,
-				CEFBFC241BD0D6B60062961D /* Seltabbar3@2x.png */,
-				CEFBFC251BD0D6B60062961D /* Seltabbar2@2x.png */,
-				CEFBFC261BD0D6B60062961D /* tabbar1@2x.png */,
 				CEFBFC0B1BCFA5700062961D /* IM */,
 				CEFBFC021BCF93330062961D /* Category */,
 				CEFBFC071BCF93330062961D /* Tool */,
@@ -201,8 +223,8 @@
 		CEFBFBFE1BCF91D50062961D /* login */ = {
 			isa = PBXGroup;
 			children = (
-				CE5080491BCE668F00074DA9 /* ViewController.h */,
-				CE50804A1BCE668F00074DA9 /* ViewController.m */,
+				CE38C0FE1BFED7DD0058C6B2 /* ViewController.h */,
+				CE38C0FF1BFED7DD0058C6B2 /* ViewController.m */,
 				CE50804C1BCE668F00074DA9 /* Main.storyboard */,
 				CEFBFBFF1BCF91F40062961D /* CKLoginUser.h */,
 				CEFBFC001BCF91F40062961D /* CKLoginUser.m */,
@@ -232,19 +254,10 @@
 		CEFBFC0B1BCFA5700062961D /* IM */ = {
 			isa = PBXGroup;
 			children = (
-				CEFBFC0C1BCFA5AF0062961D /* IM.storyboard */,
-				CEFBFC0E1BCFAE6A0062961D /* CKPersonalViewController.h */,
-				CEFBFC0F1BCFAE6A0062961D /* CKPersonalViewController.m */,
-				CEFBFC111BD0CCFA0062961D /* CKMessageViewController.h */,
-				CEFBFC121BD0CCFA0062961D /* CKMessageViewController.m */,
-				CEFBFC141BD0CD050062961D /* CKContactViewController.h */,
-				CEFBFC151BD0CD050062961D /* CKContactViewController.m */,
-				CEFBFC171BD0CFE10062961D /* CKChatViewController.h */,
-				CEFBFC181BD0CFE10062961D /* CKChatViewController.m */,
-				CEFBFC1A1BD0D3A90062961D /* CKViewController.h */,
-				CEFBFC1B1BD0D3A90062961D /* CKViewController.m */,
-				CEFBFC311BD0F1BD0062961D /* CKAddViewController.h */,
-				CEFBFC321BD0F1BD0062961D /* CKAddViewController.m */,
+				CE38C0EA1BFED7AB0058C6B2 /* 个人信息 */,
+				CE38C0ED1BFED7AB0058C6B2 /* 消息 */,
+				CE38C0F41BFED7AB0058C6B2 /* Main */,
+				CE4DD57B1BD4D36D00361C78 /* 我的好友 */,
 			);
 			path = IM;
 			sourceTree = "<group>";
@@ -300,6 +313,7 @@
 				TargetAttributes = {
 					CE50803E1BCE668F00074DA9 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = SXGEBJPKKZ;
 					};
 					CE5080571BCE668F00074DA9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -332,16 +346,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE50804E1BCE668F00074DA9 /* Main.storyboard in Resources */,
-				CEFBFC2A1BD0D6B60062961D /* Seltabbar3@2x.png in Resources */,
-				CEFBFC301BD0DA700062961D /* leftmessage.png in Resources */,
-				CEFBFC2C1BD0D6B60062961D /* tabbar1@2x.png in Resources */,
-				CEFBFC2B1BD0D6B60062961D /* Seltabbar2@2x.png in Resources */,
-				CEFBFC2F1BD0DA700062961D /* rightmessage.png in Resources */,
-				CEFBFC271BD0D6B60062961D /* tabbar2@2x.png in Resources */,
 				CE5080531BCE668F00074DA9 /* LaunchScreen.xib in Resources */,
-				CEFBFC291BD0D6B60062961D /* Seltabbar1@2x.png in Resources */,
-				CEFBFC0D1BCFA5AF0062961D /* IM.storyboard in Resources */,
-				CEFBFC281BD0D6B60062961D /* tabbar3@2x.png in Resources */,
+				CE38C0FD1BFED7AB0058C6B2 /* IM.storyboard in Resources */,
 				CE5080501BCE668F00074DA9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,17 +400,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFBFC091BCF93330062961D /* NSArray+Log.m in Sources */,
-				CEFBFC1C1BD0D3A90062961D /* CKViewController.m in Sources */,
-				CE50804B1BCE668F00074DA9 /* ViewController.m in Sources */,
-				CEFBFC191BD0CFE10062961D /* CKChatViewController.m in Sources */,
+				CE2AC59B1BFD82130032CB47 /* CKContactViewController.m in Sources */,
+				CE38C0F91BFED7AB0058C6B2 /* CKChatViewController.m in Sources */,
 				CE5080481BCE668F00074DA9 /* AppDelegate.m in Sources */,
+				CE2AC59A1BFD82130032CB47 /* CKAddViewController.m in Sources */,
+				CE38C0FB1BFED7AB0058C6B2 /* CKMessageViewController.m in Sources */,
+				CE38C1001BFED7DD0058C6B2 /* ViewController.m in Sources */,
 				CEFBFC011BCF91F40062961D /* CKLoginUser.m in Sources */,
-				CEFBFC331BD0F1BD0062961D /* CKAddViewController.m in Sources */,
 				CE5080451BCE668F00074DA9 /* main.m in Sources */,
-				CEFBFC101BCFAE6A0062961D /* CKPersonalViewController.m in Sources */,
-				CEFBFC161BD0CD050062961D /* CKContactViewController.m in Sources */,
-				CEFBFC131BD0CCFA0062961D /* CKMessageViewController.m in Sources */,
+				CE38C0F81BFED7AB0058C6B2 /* CKPersonalViewController.m in Sources */,
 				CEFBFC0A1BCF93330062961D /* NSString+Helper.m in Sources */,
+				CE38C0FA1BFED7AB0058C6B2 /* CKMessageTableViewController.m in Sources */,
+				CE38C0FC1BFED7AB0058C6B2 /* CKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,10 +542,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = xmppChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -548,10 +558,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = xmppChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

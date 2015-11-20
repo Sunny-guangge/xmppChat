@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "XMPPvCardTemp.h"
 #import "CKLoginUser.h"
+//#import "CKEditViewController.h"
 
 @interface CKPersonalViewController ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
@@ -35,9 +36,12 @@
 - (UITableView *)cardTableView
 {
     if (!_cardTableView) {
-        _cardTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 49)];
+        _cardTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height )];
         _cardTableView.delegate = self;
         _cardTableView.dataSource = self;
+        
+        UIView *footerView = [[UIView alloc] initWithFrame:CGRectZero];
+        _cardTableView.tableFooterView = footerView;
     }
     return _cardTableView;
 }
@@ -53,15 +57,33 @@
     
     nameArray = [[NSMutableArray alloc] initWithObjects:@"头像",@"姓名",@"账号",@"公司",@"部门",@"职务",@"电话",@"邮件", nil];
     
-    zhiArray = [NSMutableArray array];
+    zhiArray = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
     
-    [self.view addSubview:self.cardTableView];
     
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     //获取用户个人信息
-    [self getUserMessage];
+//    [self getUserMessage];
+    
+    UIBarButtonItem *editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(didClickEditButton)];
+    
+    self.navigationItem.leftBarButtonItem = editBarButtonItem;
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self getUserMessage];
+}
+
+- (void)didClickEditButton
+{
+//    CKEditViewController *editVC = [[CKEditViewController alloc] initWithNibName:@"CKEditViewController" bundle:nil];
+//    
+//    [self.navigationController pushViewController:editVC animated:YES];
+}
 
 - (void)getUserMessage
 {
@@ -94,27 +116,28 @@
     }
     
     if (myCard.nickname) {
-        [zhiArray addObject:myCard.nickname];
+        [zhiArray replaceObjectAtIndex:0 withObject:myCard.nickname];
     }
     if (myCard.jid) {
-        [zhiArray addObject:[myCard.jid full]];
+        [zhiArray replaceObjectAtIndex:1 withObject:[myCard.jid full]];
     }
     if (myCard.orgName) {
-        [zhiArray addObject:myCard.orgName];
+        [zhiArray replaceObjectAtIndex:2 withObject:myCard.orgName];
     }
     if (myCard.orgUnits) {
-        [zhiArray addObject:myCard.orgUnits[0]];
+        [zhiArray replaceObjectAtIndex:3 withObject:myCard.orgUnits[0]];
     }
     if (myCard.title) {
-        [zhiArray addObject:myCard.title];
+        [zhiArray replaceObjectAtIndex:4 withObject:myCard.title];
     }
     if (myCard.note) {
-        [zhiArray addObject:myCard.note];
+        [zhiArray replaceObjectAtIndex:5 withObject:myCard.note];
     }
     if (myCard.mailer) {
-        [zhiArray addObject:myCard.mailer];
+        [zhiArray replaceObjectAtIndex:6 withObject:myCard.mailer];
     }
     
+    [self.view addSubview:self.cardTableView];
     [self.cardTableView reloadData];
 }
 
@@ -204,22 +227,22 @@
         label1.text = [zhiArray objectAtIndex:0];
     }
     if (indexPath.row == 2) {
-        label2.text = [zhiArray objectAtIndex:0];
+        label2.text = [zhiArray objectAtIndex:1];
     }
     if (indexPath.row == 3) {
-        label3.text = [zhiArray objectAtIndex:0];
+        label3.text = [zhiArray objectAtIndex:2];
     }
     if (indexPath.row == 4) {
-        label4.text = [zhiArray objectAtIndex:0];
+        label4.text = [zhiArray objectAtIndex:3];
     }
     if (indexPath.row == 5) {
-        label5.text = [zhiArray objectAtIndex:0];
+        label5.text = [zhiArray objectAtIndex:4];
     }
     if (indexPath.row == 6) {
-        label6.text = [zhiArray objectAtIndex:0];
+        label6.text = [zhiArray objectAtIndex:5];
     }
     if (indexPath.row == 7) {
-        label7.text = [zhiArray objectAtIndex:0];
+        label7.text = [zhiArray objectAtIndex:6];
     }
     
     return cell;

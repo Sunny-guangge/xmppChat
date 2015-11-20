@@ -66,7 +66,7 @@ typedef void(^FailBlock)(NSString *fail);
 @property (nonatomic,assign) BOOL isRegisterUser;
 
 
-
+-(NSArray*)getFriends;
 
 - (void)connectWithSeverWithCompletion:(Completion)completion withFailBlock:(FailBlock)failBlock;
 

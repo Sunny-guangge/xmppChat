@@ -14,9 +14,9 @@
 #import "XMPPCapabilities.h"
 #import "XMPPCapabilitiesCoreDataStorage.h"
 
-#define CKHostName @"192.168.1.105"
+#define CKHostName @"192.168.1.101"
 
-@interface AppDelegate ()<XMPPStreamDelegate,UIAlertViewDelegate>
+@interface AppDelegate ()<XMPPStreamDelegate,UIAlertViewDelegate,NSFetchedResultsControllerDelegate>
 {
     Completion _completion;
     FailBlock _failBlock;
@@ -31,6 +31,8 @@
     
     //申请加好友的人的信息
     XMPPJID *jid;
+    
+    NSFetchedResultsController *_fecthdeResultController;
 }
 
 //设置xmppstream
@@ -224,41 +226,7 @@
     [self teardownStream];
 }
 
-/*收到有人添加好友的消息
-- (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence
-{
-    //取得好友状态
-    NSString *presenceType = [NSString stringWithFormat:@"%@", [presence type]]; //online/offline
-    //请求的用户
-    NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
-    NSLog(@"presenceType:%@",presenceType);
-    
-    NSLog(@"presence2:%@  sender2:%@",presence,sender);
-    
-    jid = [XMPPJID jidWithString:presenceFromUser];
-    
-    NSString *message = [NSString stringWithFormat:@"%@请求加您为好友！",presenceFromUser];
-    
-    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
-    alertview.delegate = self;
-    [alertview show];
-    
-//    [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
-}
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if(buttonIndex == 0)
-    {
-        [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:NO];
-    }else
-    {
-        [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
-    }
-    
-    
-}
-*/
 #pragma mark 通知服务器上线
 - (void)goOnline
 {
@@ -416,5 +384,98 @@
     [self changeStoryboardWithBool:NO];
 }
 
+////收到有人添加好友的消息
+//- (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence
+//{
+//    //取得好友状态
+//    NSString *presenceType = [NSString stringWithFormat:@"%@", [presence type]]; //online/offline
+//    //请求的用户
+//    NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
+//    NSLog(@"presenceType:%@",presenceType);
+//    
+//    NSLog(@"presence2:%@  sender2:%@",presence,sender);
+//    
+//    jid = [XMPPJID jidWithString:presenceFromUser];
+//    
+//    NSString *message = [NSString stringWithFormat:@"%@请求加您为好友！",presenceFromUser];
+//    
+//    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+//    alertview.delegate = self;
+//    [alertview show];
+//    
+//    //    [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
+//}
+//
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    if(buttonIndex == 0)
+//    {
+//        [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:NO];
+//    }else
+//    {
+//        [_xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
+//    }
+//}
 
+//收到好友请求 代理函数
+-(void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence
+{
+    NSString * presenceType = [presence type];
+    NSLog(@"presenceType = %@",presenceType);
+    XMPPJID * fromJid = presence.from;
+    if ([presenceType isEqualToString:@"subscribe"]) {//是订阅请求  直接通过
+        [_xmppRoster acceptPresenceSubscriptionRequestFrom:fromJid andAddToRoster:YES];
+    }
+}
+
+-(void)xmppRoster:(XMPPRoster *)sender didReceiveRosterItem:(DDXMLElement *)item
+{
+    NSString *subscription = [item attributeStringValueForName:@"subscription"];
+    NSLog(@"%@",subscription);
+    if ([subscription isEqualToString:@"both"]) {
+        NSLog(@"双方成为好友！");
+    }
+    NSLog(@"");
+}
+
+
+//获取好友列表
+-(NSArray*)getFriends
+{
+    NSManagedObjectContext *context = _xmppRosterStorage.mainThreadManagedObjectContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"XMPPUserCoreDataStorageObject"];
+    
+    //筛选本用户的好友
+    NSString *userinfo = [NSString stringWithFormat:@"%@@%@",[[CKLoginUser shareLoginUser] loginUserName],@"teacher.local"];
+    
+    NSLog(@"userinfo = %@",userinfo);
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@" streamBareJidStr = %@ ",userinfo];
+    request.predicate = predicate;
+    
+    //排序
+    NSSortDescriptor * sort = [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES];
+    request.sortDescriptors = @[sort];
+    
+    _fecthdeResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    _fecthdeResultController.delegate = self;
+    NSError *error;
+    [_fecthdeResultController performFetch:&error];
+    
+    //返回的数组是XMPPUserCoreDataStorageObject  *obj类型的
+    //名称为 obj.displayName
+    NSLog(@"%lu",(unsigned long)_fecthdeResultController.fetchedObjects.count);
+    return  _fecthdeResultController.fetchedObjects;
+}
+
+//数据库有变化
+-(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    NSManagedObject *obj = anObject;
+    if([obj isKindOfClass:[XMPPMessageArchiving_Message_CoreDataObject class]])
+    {
+//        NSLog(@"<span style="font-family:">聊天的信息的数据库发生变化</span>");
+    }//</xmppstreamdelegate,xmpprosterdelegate,nsfetchedresultscontrollerdelegate>
+
+}
 @end
