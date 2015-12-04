@@ -2,7 +2,7 @@
 //  CKMessageTableViewCell.m
 //  xmppChat
 //
-//  Created by user on 15/11/20.
+//  Created by user on 15/11/25.
 //  Copyright © 2015年 user. All rights reserved.
 //
 
@@ -10,14 +10,12 @@
 
 @implementation CKMessageTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
+*/
 
 @end

@@ -2,12 +2,12 @@
 //  CKMessageTableViewCell.h
 //  xmppChat
 //
-//  Created by user on 15/11/20.
+//  Created by user on 15/11/25.
 //  Copyright © 2015年 user. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CKCommonTableViewCell.h"
 
-@interface CKMessageTableViewCell : UITableViewCell
+@interface CKMessageTableViewCell : CKCommonTableViewCell
 
 @end
